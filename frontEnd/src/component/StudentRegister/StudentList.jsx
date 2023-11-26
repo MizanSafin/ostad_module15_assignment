@@ -29,8 +29,8 @@ function StudentList() {
 
   if (studentList.length === 0) {
     return (
-      <div>
-        <h1>Loading.....</h1>
+      <div className=" student-list my-10 px-28 flex justify-center items-center">
+        <h1 className="text-4xl">Loading.....</h1>
       </div>
     );
   } else {
