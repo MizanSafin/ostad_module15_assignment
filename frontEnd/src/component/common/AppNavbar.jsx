@@ -36,7 +36,9 @@ function AppNavbar() {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Student Register</a>
+          <a className="font-mono btn btn-ghost text-xl" href="/">
+            Student Register
+          </a>
         </div>
         <div className="navbar-end hidden lg:flex ">
           <ul className="menu menu-horizontal px-1">

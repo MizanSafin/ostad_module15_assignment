@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+
 import {
   DeleteStudentRequest,
   ReadStudentsRequest,
 } from "../../ApiRequest/ApiRequest";
 import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { formatDate } from "../../helper/helperFunc";
 
 function StudentList() {
   const [studentList, setStudentList] = useState([]);
@@ -39,7 +41,7 @@ function StudentList() {
         <div className="student-list overflow-x-auto my-10 px-28 ">
           <table className="table ">
             <thead>
-              <tr>
+              <tr className="bg-sky-600 text-gray-100">
                 <th>First name</th>
                 <th>lastName</th>
                 <th>gender</th>
@@ -73,12 +75,12 @@ function StudentList() {
                     <td>{firstName}</td>
                     <td>{lastName}</td>
                     <td>{gender}</td>
-                    <td>{dateOfBirth}</td>
+                    <td className="date ">{formatDate(dateOfBirth)}</td>
                     <td>{nationality}</td>
                     <td>{address}</td>
                     <td>{email}</td>
                     <td>{phone}</td>
-                    <td>{admissionDate}</td>
+                    <td>{formatDate(admissionDate)}</td>
                     <td>{courses}</td>
                     <td className="flex gap-0 bg-slate-100">
                       <button

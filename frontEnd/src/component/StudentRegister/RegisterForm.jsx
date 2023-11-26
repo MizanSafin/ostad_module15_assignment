@@ -6,6 +6,7 @@ import {
   ReadStudentByIDRequest,
   UpdateStudentRequest,
 } from "../../ApiRequest/ApiRequest";
+import { formatDate } from "../../helper/helperFunc";
 
 function RegisterForm() {
   const [formValue, setFormValue] = useState({
@@ -41,12 +42,12 @@ function RegisterForm() {
       firstName: res.data["firstName"],
       lastName: res.data["lastName"],
       gender: res.data["gender"],
-      dateOfBirth: res.data["dateOfBirth"],
+      dateOfBirth: formatDate(res.data["dateOfBirth"]),
       nationality: res.data["nationality"],
       address: res.data["address"],
       email: res.data["email"],
       phone: res.data["phone"],
-      admissionDate: res.data["admissionDate"],
+      admissionDate: formatDate(res.data["admissionDate"]),
       courses: res.data["courses"],
     });
   };
@@ -264,7 +265,7 @@ function RegisterForm() {
           </div>
           <div className="w-full md:w-[200px]  mt-5 cursor-pointer px-3">
             <input
-              className=" block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 cursor-pointer"
+              className=" block w-full bg-sky-700 text-slate-100 mb-10 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 cursor-pointer"
               type="submit"
               value="Submit"
               onClick={handleSubmit}
