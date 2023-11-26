@@ -82,18 +82,18 @@ function StudentList() {
                     <td>{phone}</td>
                     <td>{formatDate(admissionDate)}</td>
                     <td>{courses}</td>
-                    <td className="flex gap-0 bg-slate-100">
+                    <td className="flex gap-0 bg-slate-300">
                       <button
                         onClick={() => deleteStudent(_id)}
-                        className="btn  btn-link"
+                        className="btn  btn-link text-pink-700"
                       >
-                        delete
+                        Delete
                       </button>
                       <Link
-                        className="btn btn-active btn-link"
+                        className="btn btn-active btn-link text-yellow-600"
                         to={"/save-student?id=" + _id}
                       >
-                        edit
+                        Edit
                       </Link>
                     </td>
                   </tr>
